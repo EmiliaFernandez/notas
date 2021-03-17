@@ -1,3 +1,4 @@
+package notas;
 import java.util.Scanner;
 
 /**
@@ -17,16 +18,26 @@ public class Notas {
 		n = reader.nextInt();
 		 
 
-		 if(n>=0 && n<5)
-		 calificacion="Suspenso";
-		 else
-		 if(n>=5 && n<=10)
-			 calificacion="Aprobado";
-		 else
-			 calificacion="La nota introducida no es correcta";
+		 calificacion = obtenerNota(n);
 
 		 System.out.println (calificacion);
 		 reader.close();
+	}
+
+	/**
+	 * @param nota
+	 * @return
+	 */
+	public static String obtenerNota(int nota) {
+		String calificacion;
+		if(nota>=0 && nota<5)
+		 calificacion="Suspenso";
+		 else
+		 if(nota>=5 && nota<=10)
+			 calificacion="Aprobado";
+		 else
+			 calificacion="La nota introducida no es correcta";
+		return calificacion;
 	}
 
 }
